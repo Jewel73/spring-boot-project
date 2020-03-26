@@ -1,0 +1,16 @@
+package com.example.demo;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class ServiceClass {
+	
+	public String check(User user) {
+		if(user.getUsername().equals("jewel") && user.getPassword().equalsIgnoreCase("jewel")) {
+			return "login Sucessfull";
+		}else {
+			return "Login Not Success";
+		}
+		
+	}
+}

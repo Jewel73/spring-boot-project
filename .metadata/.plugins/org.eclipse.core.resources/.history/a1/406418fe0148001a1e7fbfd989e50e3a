@@ -1,0 +1,17 @@
+package com.example.employe;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class EmployeService {
+	
+	private List<Employe> empList= ArrayList<Employe>(
+			Arrays.asList(
+					new User(101, "jewel", "Male", "Dhaka")
+					
+					)
+			);
+}

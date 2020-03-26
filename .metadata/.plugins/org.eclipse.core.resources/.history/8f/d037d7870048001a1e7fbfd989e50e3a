@@ -1,0 +1,6 @@
+package com.example.employe;
+
+@Service
+public class EmployeService {
+
+}

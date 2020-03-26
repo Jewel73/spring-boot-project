@@ -1,0 +1,51 @@
+package com.example.demo;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class TopicService {
+	
+	private List<Topics> list= new ArrayList<>(
+			Arrays.asList(new Topics("java", "Java Programming", "This is Java Programming"),
+						  new Topics("Python", "Python Programming", "This is Python Programming"),
+						  new Topics("Ruby", "Ruby Programming", "This is Ruby Programming"),
+						  new Topics("javascript", "javascript Programming", "This is javascript Programming")
+						  
+			)
+			);
+
+	public List<Topics> getAllTopic() {
+		return list;
+	}
+
+	public Topics getOne(String id) {
+
+		return list.stream().filter(list->list.getId().equals(id)).findFirst().get();
+	}
+
+	public void saveTopic(Topics topic) {
+		list.add(topic);		
+	}
+
+
+	public void update(String id, Topics topic) {
+		for (int i = 0; i < list.size(); i++) {
+			Topics t = list.get(i);
+			if (t.equals(id)) {
+				list.set(i, topic);
+				return;
+			}
+		}
+		
+	}
+
+	public void delete(String id) {
+		list.removeIf(list->list.getId().equals(id));
+		
+	}
+
+}

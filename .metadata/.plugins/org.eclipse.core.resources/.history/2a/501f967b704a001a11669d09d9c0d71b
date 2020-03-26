@@ -1,0 +1,18 @@
+package com.example.demo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class UserService {
+	private List<User> userList=new ArrayList<>();
+	
+	public Response save(User user) {
+		userList.add(user);
+		return new Response("You Information Summitted Succesfully");
+		}
+
+	public List<User> getUsers() {
+		return userList;
+	}
+
+}
